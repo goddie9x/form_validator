@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>vadatior form</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="form-1" id="form-1">
+            <div class="form-1-header">
+                <h2 class="title">Đăng ký làm bạn ❤️</h2>
+            </div>
+            <div class="input-name input-form ">
+                <label for="input-full-name-form-1" class="full-name label-form-1">Họ và tên</label>
+                <input type="text" id="input-full-name-form-1" placeholder="VD : Hoàng Tâm" class="input-form-1">
+                <div class="message">test</div>
+            </div>
+            <div class="input-email input-form">
+                <label for="input-email-form-1" class="email label-form-1">Email</label>
+                <input type="text" id="input-email-form-1" placeholder="VD : abc@domain.ghi" class="input-form-1">
+                <div class="message"></div>
+            </div>
+            <div class="input-password input-form">
+                <label for="input-password-form-1" class="password label-form-1">Mật khẩu</label>
+                <input type="password" id="input-password-form-1" placeholder="Nhập mật khẩu" class="input-form-1">
+                <div class="message"></div>
+            </div>
+            <div class="re-input-pass input-form">
+                <label for="re-input-password-form-1" class="password label-form-1">Xác nhận mật khẩu</label>
+                <input type="password" id="re-input-password-form-1" placeholder="Nhập lại mật khẩu" class="input-form-1">
+                <div class="message"></div>
+            </div>
+            <div class="confirm">
+                <input type="checkbox" id="checkbox-form-1">
+                <label for="checkbox-form-1">Nhận thông báo</label>
+            </div>
+            <div class="register-form-1 input-form">
+                <button class="register">Đăng ký</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script src="./assets/scripts/vaildator.js"></script>
+
+<script>
+    Validator({
+        form: '#form-1',
+        rule: [
+            Validator.isRequired('#input-full-name-form-1'),
+            Validator.isEmail('#input-email-form-1'),
+            Validator.minLength('#input-password-form-1', 6)
+        ]
+    });
+</script>
+
+</html>
