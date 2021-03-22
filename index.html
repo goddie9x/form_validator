@@ -17,27 +17,38 @@
             </div>
             <div class="input-name input-form ">
                 <label for="input-full-name-form-1" class="full-name label-form-1">Họ và tên</label>
-                <input type="text" id="input-full-name-form-1" placeholder="VD : Hoàng Tâm" class="input-form-1">
-                <div class="message">test</div>
+                <input type="text" id="input-full-name-form-1" name="name" placeholder="VD : Hoàng Tâm" class="input-form-1">
+                <div class="message"></div>
             </div>
             <div class="input-email input-form">
                 <label for="input-email-form-1" class="email label-form-1">Email</label>
-                <input type="text" id="input-email-form-1" placeholder="VD : abc@domain.ghi" class="input-form-1">
+                <input type="text" id="input-email-form-1" name="email" placeholder="VD : abc@domain.ghi" class="input-form-1">
                 <div class="message"></div>
             </div>
             <div class="input-password input-form">
                 <label for="input-password-form-1" class="password label-form-1">Mật khẩu</label>
-                <input type="password" id="input-password-form-1" placeholder="Nhập mật khẩu" class="input-form-1">
+                <input type="password" id="input-password-form-1" name="password" placeholder="Nhập mật khẩu" class="input-form-1">
                 <div class="message"></div>
             </div>
             <div class="re-input-pass input-form">
                 <label for="re-input-password-form-1" class="password label-form-1">Xác nhận mật khẩu</label>
-                <input type="password" id="re-input-password-form-1" placeholder="Nhập lại mật khẩu" class="input-form-1">
+                <input type="password" id="re-input-password-form-1" name="repassword" placeholder="Nhập lại mật khẩu" class="input-form-1">
                 <div class="message"></div>
             </div>
-            <div class="confirm">
+            <div class="gender input-form">
+                <label class="label-form-1">Giới tính</label>
+                <div class="radio-inside"><input type="radio" name="gender" value="nam"> Nam</div>
+                <div class="radio-inside"><input type="radio" name="gender" value="nữ"> Nữ</div>
+                <div class="radio-inside"><input type="radio" name="gender" value="khác"> Khác</div>
+                <div class="message"></div>
+            </div>
+            <div class="confirm input-form">
                 <input type="checkbox" id="checkbox-form-1">
                 <label for="checkbox-form-1">Nhận thông báo</label>
+                <input type="checkbox" id="checkbox-form-2">
+                <label for="checkbox-form-2">Nhận thông báo2</label>
+                <input type="checkbox" id="checkbox-form-3">
+                <label for="checkbox-form-3">Nhận thông báo3</label>
             </div>
             <div class="register-form-1 input-form">
                 <button class="register">Đăng ký</button>
@@ -49,13 +60,27 @@
 <script src="./assets/scripts/vaildator.js"></script>
 
 <script>
+    //các tham số phải là chuỗi chuẩn để có thể query ra phần tử cụ thể
     Validator({
         form: '#form-1',
+        closestParentOfInputAndMessage: '.input-form',
+        errorMessage: '.message',
         rule: [
             Validator.isRequired('#input-full-name-form-1'),
+            Validator.isRequired('#input-email-form-1'),
             Validator.isEmail('#input-email-form-1'),
-            Validator.minLength('#input-password-form-1', 6)
-        ]
+            Validator.minLength('#input-password-form-1', 6),
+            Validator.isRequired('#re-input-password-form-1'),
+            Validator.isRequired('input[name="gender"]'),
+            Validator.isRequired('input[type="checkbox"]'),
+            Validator.isConfirm('#re-input-password-form-1', function() {
+                return document.querySelector('#form-1 #input-password-form-1').value;
+            })
+        ],
+        onSubmit: function(data) {
+            //call API
+            console.log(data);
+        }
     });
 </script>
 
