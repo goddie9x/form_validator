@@ -18,7 +18,7 @@ body {
 .bread-crumb {
     position: absolute;
     font-weight: 600;
-    left: 25px;
+    left: 400px;
     top: 70px;
 }
 
@@ -324,6 +324,10 @@ a:visited {
     padding: 0;
 }
 
+#form-1 {
+    margin-top: 50px;
+}
+
 
 /*-------------------------------------------------RESPONSIVE-----------------------------------------------*/
 
@@ -359,11 +363,15 @@ a:visited {
         margin: 60px auto;
         padding: 40px 50px;
     }
-    .hello__content {
-        flex-direction: column;
-    }
     body {
         font-size: 18px;
+    }
+    .bread-crumb {
+        top: 120px;
+        left: 250px;
+    }
+    .hello__content {
+        flex-direction: column;
     }
     .hello__title {
         font-size: 40px;
@@ -397,6 +405,10 @@ a:visited {
 @media (max-width: 768px) {
     body {
         font-size: 16px;
+    }
+    .bread-crumb {
+        top: 100px;
+        left: 10vw;
     }
     .bar-item-mobile.current-page {
         color: green;
