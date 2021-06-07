@@ -18,8 +18,8 @@ body {
 .bread-crumb {
     position: absolute;
     font-weight: 600;
-    left: 10px;
-    top: 20px;
+    left: 25px;
+    top: 70px;
 }
 
 .bread-crumb a.bread-crumb__item {
