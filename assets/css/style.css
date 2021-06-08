@@ -18,7 +18,7 @@ body {
 .bread-crumb {
     position: absolute;
     font-weight: 600;
-    left: 400px;
+    left: 35vw;
     top: 70px;
 }
 
@@ -180,7 +180,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 50px 0;
+    margin: 100px 0;
     padding: 20px;
     box-shadow: 0px 0px 4px 0px black;
 }
@@ -322,10 +322,6 @@ a:visited {
     height: 28px;
     cursor: pointer;
     padding: 0;
-}
-
-#form-1 {
-    margin-top: 50px;
 }
 
 
